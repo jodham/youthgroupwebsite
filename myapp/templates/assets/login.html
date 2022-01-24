@@ -1,0 +1,30 @@
+{% extends 'assets/base.html'%}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-3 p-3">
+      <div class="text-center">
+        <div class="card p-3">
+          <div class="py-5 text-center h3">Login</div>
+          <form method="POST" action="{% url 'login' %}">
+            {%csrf_token%}
+            <div class="text-center">
+            <div class="row">
+              <div class="col-md-6">
+                <label >Username</label>
+                <input type="text" class="form-control" name="username">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+              </div>
+            </div>
+            </div>
+            <div class="field mt-2 text-center">
+              <button type="submit" class=" btn bg-info">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

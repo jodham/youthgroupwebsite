@@ -1,0 +1,69 @@
+{%extends 'assets/base.html'%}
+{% load crispy_forms_tags%}
+{% block content%}
+<section class="hero is-dark is-fullheight">
+	<div class="hero-body">
+		<div class="container">
+			<div class="py-5 text-center h3 mt-3 text-info">Create Account</div>
+		  <div class="columns is-centered">
+			  <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+				  <form method="POST" action="{%url 'register'%}" class="box">
+					  {% csrf_token %}
+					<div class="row">
+						<div class="col-6 col-md-6">
+							<label>First Name</label>
+							<input type="text" class="form-control" name="firstname" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label >Second Name</label>
+							<input type="text" class="form-control" name="secondname" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label >Username</label>
+							<input type="text" class="form-control" name="username" id="username" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label >Primary school</label>
+							<input type="text" class="form-control" name="Primaryscool" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label >Position</label>
+							<input type="text" class="form-control" name="position" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label >High School</label>
+							<input type="text" class="form-control" name="highschool" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label >Email</label>
+							<input type="text" class="form-control" name="email" required="">
+						</div>
+						<div class="col-6 col-md-6">
+							<label>University</label>
+							<input type="text" class="form-control" name="university" required="">
+						</div>
+					</div>
+					  <div class="row">
+					<div class="col-6 col-md-6">
+						<label for="pass1">Password</label>
+						<input type="password" class="form-control" name="pass1" id="pass1" required="">
+					</div>
+					<div class="col-6 col-md-6">
+						<label for="pass2">Confirm Password</label>
+						<input type="password" class="form-control" name="pass2" id="pass2" required="">
+					</div>
+				</div>
+					  <div class="field mt-2 text-center">
+						<button class=" btn button is=success bg-info" type="submit">
+							Register
+						</button>
+					  </div>
+
+				  </form>
+			  </div>
+		  </div>
+		</div>
+	</div>
+</section>
+
+{% endblock content %}

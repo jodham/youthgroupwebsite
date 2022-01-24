@@ -1,0 +1,102 @@
+/*-------------------------------home-------------------
+.home{
+	height: 100%;
+	background-color: #1D365C;
+}
+.home .card{
+    border: 1px solid #0062cc;
+    margin: 25px;
+    height: 90%;
+    padding: 0;
+}
+.home .card-body{
+	padding: 1.25rem .9rem;
+	background-color: #364C6E;
+}
+.home img{
+	height: 60vh;
+}
+.home .card-title{
+	font-size: 20px;
+	font-family: Baskerville;
+	color: white;
+}
+.home label{
+	margin-left: 80px;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 25px;
+	color: white;
+}
+.home p{
+	margin-left: 80px;
+	letter-spacing: 4px;
+	font-weight: bold;
+	font-family: Courier New;
+	font-size: 28px;
+	color: white;
+}
+.home span{
+	font-size: 15px;
+	font-family: times new roman;
+}
+------------------x-------------home-----------x--------*/
+/*------------------x-------------post-card-----------x--------*/
+body{
+  background: #ddd;
+}
+.profile-area{
+  padding: 80px 0;
+  height: 40%;
+}
+.card{
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 15px;
+}
+.img1 img{
+  height: 200px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 100%;
+}
+img2 img{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 7px solid #fff;
+  margin-top: -80px;
+}
+.card:hover .img2 img{
+  border-color: darkcyan;
+  transition: .7s;
+}
+.main-text{
+  padding: 30px 0;
+  text-align: center;
+}
+.main-text h2{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+.main-text p{
+  font-size: 16px;
+  padding: 0 35px;
+}
+.socials{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.socials i{
+  font-size: 20px;
+  color: darkcyan;
+  padding: 0 10px;
+}
+/*------------------x-------------post-card-----------x--------*/

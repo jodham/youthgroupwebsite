@@ -1,0 +1,100 @@
+/*.mynav{
+	background-image: url('/static/images/kabuna1.jpeg');
+	background-repeat: no-repeat;
+	height: 80vh;
+  	background-size: 100% 80vh;
+}
+
+*/
+body{
+    background-color: #F8F8FF !important;
+}
+.navbar{
+	background-color: #061a37 !important;
+
+}
+.navbar .navbar-brand{
+	color: #fff;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+.navbar .navbar-nav{
+	margin: 0 auto;
+}
+.navbar .nav-item a{
+	color: #fff !important;
+}
+.navbar .dropdown-menu{
+	background-color: #061a37;
+}
+.navbar .dropdown-menu a:hover{
+	background-color: #061a37;
+}
+
+/*---------------------------home style-----------------*/
+
+/*---------------------------home style-----------------*/
+.card-img-overlay .card-text{
+	color: black;
+}
+/*---------------------------footer style-----------------*/
+/*---------------------------member-profile-------------------*/
+
+/*-------------------x--------member-profile---------x--------*/
+.footer{
+	padding: 55px 0 25px;
+	background-color: #04204a !important;
+}
+.cardtext{
+	color: #728FCE;
+}
+.footer h5{
+	color: #fff;
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-bottom: 1px solid #ffffff30;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+.footer ul{
+     padding-left: 0;
+     list-style: none;
+}
+.footer ul li{
+	line-height: 28px;
+	font-weight: 600;
+}
+.footer ul li a{
+     color: #fff;
+}
+.footer ul li a:hover{
+	color: #ffffff;
+}
+.footer p{
+    color: #ffffff80;
+}
+
+/*----------------------------footer style---------------------*/
+/*copyright style*/
+.copyright{
+	height: 40px;
+	background-color: #061a37;
+	line-height: 40px;
+}
+.copyright p{
+	margin-bottom: 0;
+	color: #ffffff;
+	text-align: center;
+}
+/*copyright style*/
+
+/*-------------------------carousel--------------------------*/
+.carousel-item{
+	height: 100vh;
+	min-height: 300px;
+	background: no-repeat scroll center scroll;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+/*----------------x---------carousel--------------x-----------*/
