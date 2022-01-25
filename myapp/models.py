@@ -7,6 +7,7 @@ from django.urls import reverse
 # Create your models here.
 
 class member(models.Model):
+    profile_pic = models.ImageField(default='default.jpg', upload_to='profilepics', blank=True, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     firstname = models.CharField(max_length=25)
     secondname = models.CharField(max_length=25)
@@ -16,11 +17,10 @@ class member(models.Model):
     university = models.CharField(max_length=200)
     position = models.CharField(max_length=25, default="Member")
     email = models.EmailField()
-    profile_pic = models.ImageField(null=True, blank=True, upload_to='profilepics', default='default.jpg')
     DateJoined = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.firstname
+        return f'{self.user.username} member'
 
     def get_absolute_url(self):
         return reverse('member_detail', kwargs={'pk': self.pk})
@@ -48,3 +48,11 @@ class post(models.Model):
 
     def __str__(self):
         return f'{self.author}'
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(default='default.jpg', upload_to='profilepics', blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.user.username} profile'

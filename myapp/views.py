@@ -4,8 +4,7 @@ from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, logout, login
 from .models import *
-from django.contrib import messages
-import json
+from .forms import MemberUpdateForm, ProfileUpdateForm
 
 
 # Create your views here.
@@ -15,13 +14,6 @@ def about(request):
     context = {}
     return render(request, templatename, context)
 
-
-@login_required(login_url='/login/')
-def profile(request):
-    templatename = "profile.html"
-    Member = request.user
-    context = {'Member': Member}
-    return render(request, templatename, context)
 
 # -----------------------------Listview------------------------
 
@@ -45,6 +37,8 @@ class PostView(ListView):
     model = post
     template_name = 'post_list.html'
     context_object_name = 'mypost'
+
+
 # -----------------------------Listview------------------------
 # -----------------------------Updateview------------------------
 
@@ -58,6 +52,8 @@ class postCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
 # --------------------x---------CreateView---------x---------------
 # -----------------------------DetailView------------------------
 
@@ -70,6 +66,8 @@ class MembersDetailView(DetailView):
 class projectDetailView(DetailView):
     model = Project
     template_name = 'Project_detail.html'
+
+
 # ----------------x-------------DetailView---------------x---------
 # <-----------------------------register-section------------------------->
 
@@ -137,4 +135,25 @@ def validate(request):
         'is_taken': User.objects.filter(username__iexact=username).exists()
     }
     return JsonResponse(data)
+
+
 # <----------------x-------------register-section---------------x--------->
+
+# <----------------x-------------updateforms---------------x--------->
+
+
+@login_required(login_url='/login/')
+def profile(request):
+    if request.method == 'POST':
+        user_update = ProfileUpdateForm(request.POST, instance=request.user)
+        prof_update = MemberUpdateForm(request.POST, request.FILES, instance=request.user.member)
+        if user_update.is_valid() and prof_update.is_valid():
+            prof_update.save()
+            user_update.save()
+    else:
+        user_update = ProfileUpdateForm(instance=request.user)
+        prof_update = MemberUpdateForm(instance=request.user)
+    context = {'user_update': user_update, 'prof_update': prof_update}
+    return render(request, 'profile.html', context)
+
+# <----------------x-------------updateforms---------------x--------->
