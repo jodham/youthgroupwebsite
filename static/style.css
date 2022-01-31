@@ -10,7 +10,7 @@ body{
     background-color: #FEFFFF !important;
 }
 .navbar{
-	background-color: #2B7A78 !important;
+	background-color: #17252A !important;
 
 }
 .navbar .navbar-brand{
@@ -92,15 +92,19 @@ body{
 /*-------------------------styles--------------------------*/
 
 .homepage{
-	background-color: #3AAFA9;
+	background-color: #2B7A78;
 	height: 80vh;
 }
 .my-card{
 	margin: 10%;
-	background-color: #DEF2F1;
+	background-color: #3AAFA9;
 }
 .kabunaititle{
-	color: #17252A;
+	color: #FEFFFF;
 	font-weight: bolder;
+}
+.front-text{
+	color: #feffff;
+	font-weight: bold;
 }
 /*----------------x---------styles--------------x-----------*/
