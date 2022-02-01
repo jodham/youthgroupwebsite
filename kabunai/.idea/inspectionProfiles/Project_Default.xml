@@ -14,7 +14,6 @@
       <option name="ignoredErrors">
         <list>
           <option value="N803" />
-          <option value="N801" />
         </list>
       </option>
     </inspection_tool>
