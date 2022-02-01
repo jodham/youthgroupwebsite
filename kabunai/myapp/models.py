@@ -20,7 +20,7 @@ class member(models.Model):
     DateJoined = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f'{self.user.username} member'
+        return f'{self.firstname, self.secondname} member'
 
     def get_absolute_url(self):
         return reverse('member_detail', kwargs={'pk': self.pk})
